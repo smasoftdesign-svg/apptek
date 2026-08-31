@@ -1,0 +1,157 @@
+/* Custom styles beyond Tailwind */
+
+/* Float animations for hero cards */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes float-badge {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float-delayed 3s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+.animate-float-badge {
+  animation: float-badge 3s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+/* Navbar height */
+.h-18 {
+  height: 4.5rem;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Pricing toggle active state */
+.pricing-toggle.active {
+  background-color: #FF5A4E;
+  color: white;
+}
+
+/* ── Auth tabs ── */
+.auth-tab.active {
+  background-color: #1B1F3B;
+  color: white;
+}
+
+/* ── Docs sidebar ── */
+.docs-sidebar-link.active {
+  color: #FF5A4E;
+  font-weight: 600;
+  border-left-color: #FF5A4E;
+}
+
+/* ── Blog category filter ── */
+.blog-filter.active {
+  background-color: #1B1F3B;
+  color: white;
+}
+
+/* ── FAQ accordion ── */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.faq-answer.open {
+  max-height: 300px;
+}
+
+/* ── Focus ring for form inputs ── */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #FF5A4E;
+  box-shadow: 0 0 0 3px rgba(255, 90, 78, 0.15);
+}
+
+/* ── Card hover lift ── */
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Page hero banner (inner pages) ── */
+.page-hero {
+  background: linear-gradient(135deg, #1B1F3B 0%, #2D3154 100%);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(255, 90, 78, 0.08);
+  pointer-events: none;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(255, 239, 229, 0.05);
+  pointer-events: none;
+}
+
+/* ── Docs sidebar mobile ── */
+.docs-sidebar {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.docs-sidebar.open {
+  transform: translateX(0);
+}
+
+/* ── Job card ── */
+.job-card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.job-card:hover {
+  border-color: #FF5A4E;
+  box-shadow: 0 8px 20px rgba(255, 90, 78, 0.1);
+}
+
+/* ── Blog card ── */
+.blog-card img {
+  transition: transform 0.3s ease;
+}
+.blog-card:hover img {
+  transform: scale(1.05);
+}
